@@ -10,9 +10,14 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # Note: pay close attention to your current directory when trying to open "foo.txt"
 
 # YOUR CODE HERE
-with open ("src/foo.txt") as rFile:
-    for line in rFile:
-        print(line)
+with open ("foo.txt") as rFile:
+    # // Read out directly from rFile
+    # for line in rFile:
+    #     print(line)
+
+    # // Capture file contents to a variable and print
+    contents = rFile.read()
+    print(contents)
 rFile.close()
 
 # Open up a file called "bar.txt" (which doesn't exist yet) for
@@ -21,6 +26,8 @@ rFile.close()
 # sure that it contains what you expect it to contain
 
 # YOUR CODE HERE
-wFile = open("src/bar.txt", "w")
+wFile = open("bar.txt", "w")
 
 wFile.write(" Knock knock \n Who's there? \n Aya Wanna ")
+
+wFile.close()
